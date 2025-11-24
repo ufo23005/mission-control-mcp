@@ -1,0 +1,64 @@
+{
+  "name": "mission-control-mcp",
+  "version": "1.0.0",
+  "description": "Mission Control MCP Server for Claude Code - A domain-agnostic task automation and validation system",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "automation",
+    "orchestrator",
+    "claude-code",
+    "validation",
+    "task-automation"
+  ],
+  "author": "ufo23005",
+  "license": "MIT",
+  "bin": {
+    "mission-control-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "docs/",
+    "examples/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ufo23005/mission-control-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ufo23005/mission-control-mcp/issues"
+  },
+  "homepage": "https://github.com/ufo23005/mission-control-mcp#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
