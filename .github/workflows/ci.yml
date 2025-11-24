@@ -149,7 +149,10 @@ jobs:
       - name: Run integration tests
         run: |
           if [ -d "tests/integration" ]; then
-            npm test -- tests/integration
+            for test_file in tests/integration/*.test.ts; do
+              echo "Running $test_file..."
+              npx tsx "$test_file"
+            done
           else
             echo "No integration tests found, skipping"
           fi
